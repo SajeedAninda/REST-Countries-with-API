@@ -21,7 +21,7 @@ const Home = () => {
 
 
     return (
-        <div className=''>
+        <div className='bg-[#fafafa]'>
             <div className='w-[85%] mx-auto'>
                 <div className='search&filter flex justify-between items-center pt-10'>
                     <div className='w-[40%] relative'>
