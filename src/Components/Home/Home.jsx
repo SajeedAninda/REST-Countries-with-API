@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import searchIcon from "../../assets/search.svg";
 import "./home.css";
+import AllCountries from './AllCountries';
 
 const Home = () => {
     let [selectedContinents, setSelectedContinents] = useState("");
@@ -58,6 +59,8 @@ const Home = () => {
                         )}
                     </div>
                 </div>
+
+                <AllCountries></AllCountries>
             </div>
         </div>
     );
