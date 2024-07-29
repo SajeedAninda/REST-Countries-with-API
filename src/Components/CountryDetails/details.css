@@ -1,0 +1,7 @@
+.backBtn {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .30);
+}
+
+.backBtn:hover{
+    box-shadow: 0 0 6px rgba(0, 0, 0, .50);
+}
