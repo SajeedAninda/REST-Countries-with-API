@@ -7,16 +7,23 @@ import {
 import App from './App.jsx'
 import './index.css'
 import Details from './Components/CountryDetails/Details.jsx';
+import Home from './Components/Home/Home.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-  },
-  {
-    path: "/:name",
-    element: <Details></Details>,
-    loader: ({ params }) => fetch(`https://restcountries.com/v3.1/name/${params.name}`)
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/:name",
+        element: <Details></Details>,
+        loader: ({ params }) => fetch(`https://restcountries.com/v3.1/name/${params.name}`)
+      },
+    ]
   },
 ]);
 
