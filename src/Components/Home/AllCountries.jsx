@@ -64,14 +64,14 @@ const AllCountries = ({ searchText, selectedContinents }) => {
                             <Link to={`/${country?.name?.official}`} key={index} className='countryCard rounded-lg shadow-md cursor-pointer hover:shadow-2xl'>
                                 <img className='h-[155px] w-full rounded-t-lg object-cover' src={country.flags?.svg} alt={country.name?.common} />
                                 <div className='space-y-2 p-6'>
-                                    <h1 className='text-[#111517] text-[18px] font-bold'>{country.name?.common}</h1>
-                                    <p className='text-[14px]'>
+                                    <h1 className='text-[#111517] dark:text-white text-[18px] font-bold'>{country.name?.common}</h1>
+                                    <p className='text-[14px] dark:text-white'>
                                         <span className='text-[14px] font-semibold'>Population: </span>{formatPopulation(country.population)}
                                     </p>
-                                    <p className='text-[14px]'>
+                                    <p className='text-[14px] dark:text-white'>
                                         <span className='text-[14px] font-semibold'>Region: </span> {country.region}
                                     </p>
-                                    <p className='text-[14px]'>
+                                    <p className='text-[14px] dark:text-white'>
                                         <span className='text-[14px] font-semibold'>Capital: </span> {country.capital?.[0]}
                                     </p>
                                 </div>
