@@ -26,74 +26,76 @@ const Details = () => {
     };
 
     return (
-        <div className='h-[100vh] py-12 w-[80%] mx-auto '>
-            <Link to={"/"} className='px-4 py-2 text-[#111517] text-[15px] font-semibold shadow-lg backBtn flex gap-2 items-center w-[10%]'>
-                <img className='w-[20px]' src={leftArrow} alt="" />
-                Back
-            </Link>
-            <div className='flex justify-center items-center mt-10'>
-                <div className='flex justify-center gap-12'>
-                    <div className='w-[50%]'>
-                        <img src={countryDetail?.flags?.svg} alt="" />
-                    </div>
-                    <div className='w-[50%]'>
-                        <h1 className='text-[#111517] text-[24px] font-extrabold'>{countryDetail?.name?.common}</h1>
-                        <div className='mt-4 flex justify-between gap-10'>
-                            <div className='space-y-2'>
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Official Name: </span>{countryDetail?.name?.official}
-                                </p>
-
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Population: </span>{formatPopulation(countryDetail?.population)}
-                                </p>
-
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Region: </span>{countryDetail?.region}
-                                </p>
-
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Sub Region: </span>{countryDetail?.subregion}
-                                </p>
-
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Capital: </span>{countryDetail?.capital?.[0]}
-                                </p>
-                            </div>
-
-                            <div className="space-y-2">
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Top Level Domain: </span>{countryDetail?.tld}
-                                </p>
-
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Currency: </span>
-                                    {Object.values(countryDetail.currencies).map((currency, index) => (
-                                        <span key={index}>{currency.name}</span>
-                                    ))}
-                                </p>
-
-                                <p className='text-[15px]'>
-                                    <span className='text-[15px] font-semibold'>Languages: </span>
-                                    {countryDetail?.languages
-                                        ? Object.values(countryDetail.languages).join(', ')
-                                        : 'Language information not available'}
-                                </p>
-                            </div>
+        <div className='dark:bg-[#202c37]'>
+            <div className='h-[100vh] py-12 w-[80%] mx-auto '>
+                <Link to={"/"} className='px-4 py-2 text-[#111517] dark:bg-[#2b3945] rounded-md dark:text-white text-[15px] font-semibold shadow-lg backBtn flex gap-2 items-center w-[10%]'>
+                    <img className='w-[20px]' src={leftArrow} alt="" />
+                    Back
+                </Link>
+                <div className='flex justify-center items-center mt-10'>
+                    <div className='flex justify-center gap-12'>
+                        <div className='w-[50%]'>
+                            <img src={countryDetail?.flags?.svg} alt="" />
                         </div>
+                        <div className='w-[50%] dark:text-white'>
+                            <h1 className='text-[#111517] dark:text-white text-[24px] font-extrabold'>{countryDetail?.name?.common}</h1>
+                            <div className='mt-4 flex justify-between gap-10'>
+                                <div className='space-y-2 dark:text-white'>
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Official Name: </span>{countryDetail?.name?.official}
+                                    </p>
 
-                        <p className='text-[13px] mt-16 flex items-center gap-2'>
-                            <span className='text-[15px] font-semibold'>Border Countries: </span>
-                            {countryDetail.borders?.length ? (
-                                countryDetail.borders.map((borderCountry, i) => (
-                                    <Link className='shadow-lg mr-2 px-1 py-2 hover:shadow-xl' key={i} to={`/${getCountryNameByCca3(borderCountry)}`}>
-                                        {getCountryNameByCca3(borderCountry)}
-                                    </Link>
-                                ))
-                            ) : (
-                                <span>No border countries</span>
-                            )}
-                        </p>
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Population: </span>{formatPopulation(countryDetail?.population)}
+                                    </p>
+
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Region: </span>{countryDetail?.region}
+                                    </p>
+
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Sub Region: </span>{countryDetail?.subregion}
+                                    </p>
+
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Capital: </span>{countryDetail?.capital?.[0]}
+                                    </p>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Top Level Domain: </span>{countryDetail?.tld}
+                                    </p>
+
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Currency: </span>
+                                        {Object.values(countryDetail.currencies).map((currency, index) => (
+                                            <span key={index}>{currency.name}</span>
+                                        ))}
+                                    </p>
+
+                                    <p className='text-[15px]'>
+                                        <span className='text-[15px] font-semibold'>Languages: </span>
+                                        {countryDetail?.languages
+                                            ? Object.values(countryDetail.languages).join(', ')
+                                            : 'Language information not available'}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p className='text-[13px] mt-16 flex items-center gap-2'>
+                                <span className='text-[15px] font-semibold'>Border Countries: </span>
+                                {countryDetail.borders?.length ? (
+                                    countryDetail.borders.map((borderCountry, i) => (
+                                        <Link className='shadow-lg mr-2 px-1 py-2 hover:shadow-xl rounded-sm dark:bg-[#2b3945] ' key={i} to={`/${getCountryNameByCca3(borderCountry)}`}>
+                                            {getCountryNameByCca3(borderCountry)}
+                                        </Link>
+                                    ))
+                                ) : (
+                                    <span>No border countries</span>
+                                )}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
