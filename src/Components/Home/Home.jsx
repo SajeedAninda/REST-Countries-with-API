@@ -19,9 +19,9 @@ const Home = () => {
 
     return (
         <div className='bg-[#fafafa] dark:bg-[#202c37]'>
-            <div className='w-[85%] mx-auto'>
-                <div className='search&filter flex justify-between items-center pt-10'>
-                    <div className='w-[40%] relative'>
+            <div className='w-[95%] lg:w-[85%] mx-auto'>
+                <div className='search&filter flex flex-col lg:flex-row gap-6 lg:gap-0 justify-between items-center pt-10'>
+                    <div className='w-full lg:w-[40%] relative'>
                         <input
                             onChange={(e) => setSearchText(e.target.value)}
                             name='searchValue'
@@ -32,7 +32,7 @@ const Home = () => {
                         <img className='w-[30px] absolute left-5 top-[14px]' src={searchIcon} alt="Search Icon" />
                     </div>
 
-                    <div className='filterBox rounded-lg w-[20%] relative'>
+                    <div className='filterBox rounded-lg w-[45%] lg:w-[20%] relative'>
                         <div
                             className='block w-full bg-white dark:bg-[#2b3945]  text-[#111517] dark:text-white font-bold py-4 px-6 rounded-lg leading-tight focus:outline-none cursor-pointer'
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}

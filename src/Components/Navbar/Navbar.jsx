@@ -21,7 +21,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='shadow-md mb-1 h-[12vh] flex items-center sticky top-0 bg-white dark:bg-[#2b3945] z-20'>
+        <div className='shadow-md mb-1 dark:mb-0 h-[12vh] flex items-center sticky top-0 bg-white dark:bg-[#2b3945] z-20'>
             <div className='w-[85%] mx-auto flex justify-between items-center'>
                 <h3 className='text-[#111517] dark:text-white text-[18px] font-extrabold'>
                     Where in the world?

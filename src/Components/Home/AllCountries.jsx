@@ -46,7 +46,7 @@ const AllCountries = ({ searchText, selectedContinents }) => {
     };
 
     return (
-        <div>
+        <div className='w-[80%] lg:w-full mx-auto'>
             {
                 loading ?
                     <div className='h-[80vh] flex justify-center items-center'>
@@ -59,7 +59,7 @@ const AllCountries = ({ searchText, selectedContinents }) => {
                     </div>
 
                     :
-                    <div className='mt-10 grid grid-cols-1 lg:grid-cols-4 gap-16'>
+                    <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16'>
                         {filteredCountries.map((country, index) => (
                             <Link to={`/${country?.name?.official}`} key={index} className='countryCard rounded-lg shadow-md cursor-pointer hover:shadow-2xl'>
                                 <img className='h-[155px] w-full rounded-t-lg object-cover' src={country.flags?.svg} alt={country.name?.common} />
