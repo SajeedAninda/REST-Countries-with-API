@@ -27,17 +27,17 @@ const Details = () => {
 
     return (
         <div className='dark:bg-[#202c37]'>
-            <div className='h-[100vh] py-12 w-[80%] mx-auto '>
-                <Link to={"/"} className='px-4 py-2 text-[#111517] dark:bg-[#2b3945] rounded-md dark:text-white text-[15px] font-semibold shadow-lg backBtn flex gap-2 items-center w-[10%]'>
+            <div className='h-fit lg:h-[100vh] py-12 w-[80%] mx-auto '>
+                <Link to={"/"} className='px-4 py-2 text-[#111517] dark:bg-[#2b3945] rounded-md dark:text-white text-[15px] font-semibold shadow-lg backBtn flex gap-2 items-center w-[30%] lg:w-[10%]'>
                     <img className='w-[20px]' src={leftArrow} alt="" />
                     Back
                 </Link>
                 <div className='flex justify-center items-center mt-10'>
-                    <div className='flex justify-center gap-12'>
-                        <div className='w-[50%]'>
+                    <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12'>
+                        <div className='w-full lg:w-[50%]'>
                             <img src={countryDetail?.flags?.svg} alt="" />
                         </div>
-                        <div className='w-[50%] dark:text-white'>
+                        <div className='w-full lg:w-[50%] dark:text-white'>
                             <h1 className='text-[#111517] dark:text-white text-[24px] font-extrabold'>{countryDetail?.name?.common}</h1>
                             <div className='mt-4 flex justify-between gap-10'>
                                 <div className='space-y-2 dark:text-white'>
