@@ -18,14 +18,14 @@ const Home = () => {
 
 
     return (
-        <div className='bg-[#fafafa]'>
+        <div className='bg-[#fafafa] dark:bg-[#202c37]'>
             <div className='w-[85%] mx-auto'>
                 <div className='search&filter flex justify-between items-center pt-10'>
                     <div className='w-[40%] relative'>
                         <input
                             onChange={(e) => setSearchText(e.target.value)}
                             name='searchValue'
-                            className='searchBox w-full rounded-lg py-4 pl-16 pr-6 placeholder:text-[14px]'
+                            className='searchBox w-full rounded-lg py-4 pl-16 pr-6 placeholder:text-[14px] dark:bg-[#2b3945] '
                             type="text"
                             placeholder='Search for a country...'
                         />
@@ -34,19 +34,19 @@ const Home = () => {
 
                     <div className='filterBox rounded-lg w-[20%] relative'>
                         <div
-                            className='block w-full bg-white text-[#111517] font-bold py-4 px-6 rounded-lg leading-tight focus:outline-none cursor-pointer'
+                            className='block w-full bg-white dark:bg-[#2b3945]  text-[#111517] dark:text-white font-bold py-4 px-6 rounded-lg leading-tight focus:outline-none cursor-pointer'
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                             aria-expanded={isDropdownOpen}
                         >
                             {selectedContinents || "Filter By Region"}
                         </div>
                         {isDropdownOpen && (
-                            <ul className='absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg'>
+                            <ul className='absolute z-10 mt-1 w-full bg-white border border-gray-300 dark:border-none rounded-lg shadow-lg'>
                                 {continents.map((continent) => (
                                     <li
                                         key={continent}
                                         aria-label={continent}
-                                        className='py-2 px-6 hover:bg-gray-100 cursor-pointer font-semibold'
+                                        className='py-2 px-6 dark:bg-[#2b3945] dark:text-white hover:bg-gray-100 cursor-pointer font-semibold'
                                         onClick={() => handleSelect(continent)}
                                     >
                                         {continent}
